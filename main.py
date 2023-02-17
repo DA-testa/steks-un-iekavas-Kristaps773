@@ -1,5 +1,5 @@
 # python3
-
+# Krists Kristaps Dūda 221RDB518
 from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
