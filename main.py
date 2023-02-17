@@ -18,24 +18,26 @@ def find_mismatch(text):
             
         if next in ")]}":
             # Process closing bracket, write your code here
-            if not opening_brackets_stack:
+            if len(opening_brackets_stack) ==0:
                 return i+1
             closing = opening_brackets_stack.pop()
             if not are_matching(closing.char, next):
                 return i+1
             
-    if opening_brackets_stack:
-        return opening_brackets_stack[0].position
-        
-    else:
-        return "Success"
+    if len(opening_brackets_stack)>0:
+        return opening_brackets_stack[0].position +1
+    return "Success"
 
 
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    # Printing answer, write your code here
-    print(mismatch)
+    # Printing answer, write your code here]
+    if(mismatch)!=None:
+        print(mismatch)
+    else:
+        print("Success")
 
 if __name__ in "__main__":
     main()
+
